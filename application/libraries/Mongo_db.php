@@ -1025,7 +1025,7 @@ Class Mongo_db
 	{
 		if (isset($fields, $list) && is_string($fields) && $fields != '' && !empty($list))
 		{
-			$this->push_where_field($fields,  $this->in($list));
+			$this->push_where_field($fields,  $this->nin($list));
 		}
 		elseif (isset($fields) && is_array($fields) && !empty($fields))
 		{
@@ -1033,7 +1033,7 @@ Class Mongo_db
 			{
 				if (is_string($field) && $field != '' && is_array($list) && !empty($list))
 				{
-					$this->push_where_field($field, $this->in($list));
+					$this->push_where_field($field, $this->nin($list));
 				}
 				else
 				{
